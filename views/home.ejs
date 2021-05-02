@@ -1,0 +1,20 @@
+<%- include("partials/header") -%>
+<div class="headSection">
+   <div class="floating-bg">
+    
+   </div>
+   <h1 class="main-head">My Diary</h1>
+</div>
+
+
+<h1 class="heading">Home</h1>
+<p class = "post"><%= dataOne %></p>
+<% posts.forEach( function(post){ %>
+   <h2 class="postTitle"> <%= post.post_title %></h2>
+   
+   <p><%= post.post_body.substring(0,100) +"..." %></p>
+   <a href="/post/<%= post.post_title %>">Read More</a>
+<%})%>
+
+
+<%- include("partials/footer") -%>
