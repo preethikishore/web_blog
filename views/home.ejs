@@ -10,10 +10,13 @@
 <h1 class="heading">Home</h1>
 <p class = "post"><%= dataOne %></p>
 <% posts.forEach( function(post){ %>
-   <h2 class="postTitle"> <%= post.post_title %></h2>
+   <form action="/delete" method="POST">
+      <h2 class="postTitle"> <%= post.title %></h2>
+      <p><%= post.content.substring(0,100) +"..." %></p>
+      <a href="/post/<%= post._id %>">Read More</a>
+      <button type="submit" name="button" value="<%= post._id %>" class="btn  btn-danger">X</button>
+   </form>
    
-   <p><%= post.post_body.substring(0,100) +"..." %></p>
-   <a href="/post/<%= post.post_title %>">Read More</a>
 <%})%>
 
 
